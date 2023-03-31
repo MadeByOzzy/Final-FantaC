@@ -6,3 +6,5 @@
 #include <time.h>
 #include <ctype.h>
 #include <stdbool.h>
+
+#include "Character.h"
