@@ -1,0 +1,3 @@
+# ignore all visual studio temp files
+Final-FantaC/.vs/*
+Final-FantaC/out/*
