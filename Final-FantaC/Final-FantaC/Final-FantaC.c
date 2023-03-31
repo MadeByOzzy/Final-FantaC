@@ -1,6 +1,9 @@
 ﻿#include "Final-FantaC.h"
 
 
+/// <summary>
+/// Character struct definition and associated methods
+/// </summary>
 
 typedef struct {
 	char name[255];
@@ -12,11 +15,31 @@ typedef struct {
 	bool isEnemy;
 } Character;
 
+/*
+* Function PrintCharacter
+* Prints the character's name to the console window
+* 
+* Params:
+*	character - the character to print
+* 
+* Returns:
+*	void
+*/
 void PrintCharacter(Character character)
 {
 	printf("%s\n", character.name);
 }
 
+/*
+* Function PrintCharacterStats
+* Prints the character name and then all their stats on indented lines
+* 
+* Params:
+*	character - the character to print
+* 
+* Returns:
+*	void
+*/
 void PrintCharacterStats(Character character)
 {
 	printf("%s\n", character.name);
@@ -29,6 +52,12 @@ void PrintCharacterStats(Character character)
 
 
 
+
+
+/// <summary>
+/// Methods to initialize the player's character stats
+/// </summary>
+
 void InitBarbarian(Character* barb)
 {
 	strcpy_s(barb->name, sizeof barb->name, "Barbarian");
@@ -37,6 +66,7 @@ void InitBarbarian(Character* barb)
 	barb->hitPoints = 100;
 	barb->manaPoints = 20;
 	barb->manaRecoveryRate = 1;
+	PrintCharacterStats(*barb);
 }
 
 void InitArcher(Character* archer)
@@ -47,6 +77,7 @@ void InitArcher(Character* archer)
 	archer->hitPoints = 80;
 	archer->manaPoints = 40;
 	archer->manaRecoveryRate = 2;
+	PrintCharacterStats(*archer);
 }
 
 void InitCleric(Character* cleric)
@@ -57,6 +88,7 @@ void InitCleric(Character* cleric)
 	cleric->hitPoints = 70;
 	cleric->manaPoints = 60;
 	cleric->manaRecoveryRate = 4;
+	PrintCharacterStats(*cleric);
 }
 
 
@@ -68,10 +100,15 @@ void InitMage(Character* mage)
 	mage->hitPoints = 70;
 	mage->manaPoints = 100;
 	mage->manaRecoveryRate = 8;
+	PrintCharacterStats(*mage);
 }
 
 
 
+
+///
+/// Start driver code
+/// 
 
 int main()
 {
@@ -84,16 +121,12 @@ int main()
 	// create the player's characters
 	Character Barbarian;
 	InitBarbarian(&Barbarian);
-	PrintCharacterStats(Barbarian);
 	Character Archer;
 	InitArcher(&Archer);
-	PrintCharacterStats(Archer);
 	Character Cleric;
 	InitCleric(&Cleric);
-	PrintCharacterStats(Cleric);
 	Character Mage;
 	InitMage(&Mage);
-	PrintCharacterStats(Mage);
 
 
 
