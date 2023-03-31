@@ -12,7 +12,6 @@ int main()
 	printf("Welcome to Final-FantaC!\nA ghetto ripoff of old Final Fantasy battle tactics written in C.\n");
 	printf("==================================================\n");
 
-
 	// create the player's characters
 	Character Barbarian;
 	InitBarbarian(&Barbarian);

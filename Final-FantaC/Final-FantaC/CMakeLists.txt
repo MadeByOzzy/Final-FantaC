@@ -7,6 +7,7 @@ cmake_minimum_required (VERSION 3.8)
 add_executable (Final-FantaC 
 	"Final-FantaC.c" "Final-FantaC.h" 
 	"Character.h" "Character.c"
-	"InitCharacters.h" "InitCharacter.c")
+	"InitCharacters.h" "InitCharacter.c"
+	"BattleSystem.h" "BattleSystem.c")
 
 # TODO: Add tests and install targets if needed.

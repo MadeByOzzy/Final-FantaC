@@ -8,6 +8,14 @@
 #include <stdbool.h>
 
 
+typedef struct {
+	char name[255];
+	int manaPointCost;
+
+} Skill;
+
+
+
 /*
 * Struct Character
 * Holds character stats, like attack, defense, name, etc.
