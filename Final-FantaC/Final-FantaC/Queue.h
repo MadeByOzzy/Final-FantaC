@@ -13,6 +13,14 @@
 * Struct: Queue
 * What is this!? A queue for ants!?
 * No, this is a queue for ints
+* 
+* Initialize both 'front' and 'rear' to -1 upon creation. Example:
+* 
+* -- Code
+* Queue queue;
+* queue.front = -1;
+* queue.rear = -1;
+* --
 */
 typedef struct {
    int items[QUEUE_MAX_SIZE];
