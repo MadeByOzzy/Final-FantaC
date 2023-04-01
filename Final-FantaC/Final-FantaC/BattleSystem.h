@@ -27,7 +27,7 @@ typedef struct {
 * 
 * Params:
 *  queue - pointer to the queue to update
-*  value - character to add to the queue
+*  value - int to add to the queue
 */
 void enqueue(Queue* queue, int value);
 

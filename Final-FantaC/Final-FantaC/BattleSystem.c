@@ -29,7 +29,7 @@ void enqueue(Queue* queue, int value)
    // update rear index
    queue->rear = next_rear;
 
-   // add the character to the back of the queue
+   // add the int to the back of the queue
    queue->items[next_rear] = value;
 }
 
