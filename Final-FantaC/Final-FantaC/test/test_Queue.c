@@ -11,6 +11,7 @@ int test_Queue()
    queue.rear = -1;
    queue.front = -1;
    
+   /////////////////////////////////////////////
    // test 1 value
    int control_val = rand();
    enqueue(&queue, control_val);
@@ -50,6 +51,53 @@ int test_Queue()
 
    // free up the memory
    free(test_array);
+
+   /////////////////////////////////////////////
+   // test the full range
+   /////////////////////////////////////////////
+
+   // allocate memory
+   int* test_array_2 = (int*)malloc(QUEUE_MAX_SIZE * sizeof(int));
+
+   // populate both the queue and the test array
+   for (int i = 0; i < QUEUE_MAX_SIZE; i++)
+   {
+      int currVal = rand();
+      test_array_2[i] = currVal;
+      enqueue(&queue, currVal);
+   }
+
+   // check the queue vs the test array
+   for (int i = 0; i < QUEUE_MAX_SIZE; i++)
+   {
+      int queue_value = dequeue(&queue);
+      if (test_array_2[i] != queue_value)
+      {
+         printf("test_Queue() FAIL because queue_value(%d) != test_array_2[%d](%d)\n", queue_value, i, test_array_2[i]);
+         return 1;
+      }
+   }
+
+   // free up memory
+   free(test_array_2);
+
+   ///////////////////////////////////////////////
+   // test underflow
+   int underflow = dequeue(&queue);
+   if (underflow != -1)
+   {
+      printf("test_Queue() FAIL because underflow did not return -1\n");
+      return 1;
+   }
+
+   ///////////////////////////////////////////////
+   // test overflow
+   // this cannot return a fault code
+   // it's just here to give the printout of the overflow error
+   for (int i = 0; i < QUEUE_MAX_SIZE + 1; i++)
+   {
+      enqueue(&queue, i);
+   }
 
    ///////////////////////////////////////////////
    // finish up
