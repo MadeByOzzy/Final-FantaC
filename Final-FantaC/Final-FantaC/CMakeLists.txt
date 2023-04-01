@@ -12,6 +12,6 @@ add_executable (Final-FantaC
 	"InitCharacters.h" "InitCharacter.c"
 
 	"BattleSystem.h" "BattleSystem.c" 
-	"test/test_BattleSystem.h" "test/test_BattleSystem.c")
+	"test/test_BattleSystem.h" "test/test_BattleSystem.c" "Queue.h" "Queue.c" "test/test_Queue.h" "test/test_Queue.c")
 
 # TODO: Add tests and install targets if needed.

@@ -7,6 +7,7 @@ int RunUnitTests()
    int errorCount = 0;
 
    // unit tests
+   errorCount += test_Queue();
    errorCount += test_BattleSystem();
 
    // finish up
