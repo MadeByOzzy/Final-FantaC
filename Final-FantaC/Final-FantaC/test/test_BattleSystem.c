@@ -3,10 +3,10 @@
 int test_BattleSystem()
 {
    // init
-   printf("== Starting test_BattleSystem() ==\n");
+   printf("== Starting test_BattleSystem()\n");
 
    // finish up
-   printf("== test_BattleSystem() finished successfully! ==\n");
+   printf("== test_BattleSystem() finished successfully!\n");
    return 0;
 }
 
