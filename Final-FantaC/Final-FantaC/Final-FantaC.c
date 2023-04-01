@@ -1,4 +1,7 @@
 ﻿#include "Final-FantaC.h"
+#include "test/RunUnitTests.h"
+
+#define DEBUG
 
 
 ///
@@ -7,6 +10,9 @@
 
 int main()
 {
+#ifdef DEBUG
+	RunUnitTests();
+#else
 	// intro text
 	printf("==================================================\n");
 	printf("Welcome to Final-FantaC!\nA ghetto ripoff of old Final Fantasy battle tactics written in C.\n");
@@ -21,6 +27,9 @@ int main()
 	InitCleric(&Cleric);
 	Character Mage;
 	InitMage(&Mage);
+#endif
+
+
 
 
 
