@@ -1,4 +1,5 @@
-#pragma once
+#ifndef INITCHARACTERS_H
+#define INITCHARACTERS_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,3 +21,5 @@ void InitBarbarian(Character* barb);
 void InitArcher(Character* archer);
 void InitCleric(Character* cleric);
 void InitMage(Character* mage);
+
+#endif

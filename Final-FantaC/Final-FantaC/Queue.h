@@ -1,4 +1,5 @@
-#pragma once
+#ifndef QUEUE_H
+#define QUEUE_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -51,3 +52,5 @@ void enqueue(Queue* queue, int value);
 *  or -1 if the queue is empty
 */
 int dequeue(Queue* queue);
+
+#endif

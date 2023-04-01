@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CHARACTER_H
+#define CHARACTER_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -53,3 +54,5 @@ void PrintCharacter(Character character);
 *	void
 */
 void PrintCharacterStats(Character character);
+
+#endif
