@@ -10,40 +10,39 @@
 #include "Character.h"
 
 #define QUEUE_MAX_SIZE 100
-//const int QUEUE_MAX_SIZE = 100;
 
 /*
-* Struct CharacterQueue
-* A queue for Character structs
+* Struct Queue
+* A queue for ints
 */
 typedef struct {
-   int characters[QUEUE_MAX_SIZE];
+   int items[QUEUE_MAX_SIZE];
    int front;
    int rear;
-} CharacterQueue;
+} Queue;
 
 /*
 * Function: enqueue
-* Add a Character to the back of the queue
+* Add an int to the back of the queue
 * 
 * Params:
 *  queue - pointer to the queue to update
-*  character - character to add to the queue
+*  value - character to add to the queue
 */
-void enqueue(CharacterQueue* queue, Character character);
+void enqueue(Queue* queue, int value);
 
 
 /*
 * Function: dequeue
-* Grab the first character off of the queue
+* Grab the first item off the queue
 * 
 * Params:
 *  queue - pointer to the queue
 * 
 * Returns:
-*  The first character off of the queue,
-*  or an empty character if queue is empty.
+*  The first int off of the queue,
+*  or -1 if the queue is empty
 */
-Character dequeue(CharacterQueue* queue);
+int dequeue(Queue* queue);
 
 

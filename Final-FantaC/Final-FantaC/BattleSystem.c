@@ -4,13 +4,13 @@
 
 /*
 * Function: enqueue
-* Add a Character to the back of the queue
+* Add an int to the back of the queue
 *
 * Params:
 *  queue - pointer to the queue to update
-*  character - character to add to the queue
+*  value - int to add to the queue
 */
-void enqueue(CharacterQueue* queue, Character character)
+void enqueue(Queue* queue, int value)
 {
    // check for queue overflow
    int next_rear = (queue->rear + 1) % QUEUE_MAX_SIZE;
@@ -30,33 +30,32 @@ void enqueue(CharacterQueue* queue, Character character)
    queue->rear = next_rear;
 
    // add the character to the back of the queue
-   queue->characters[next_rear] = character;
+   queue->items[next_rear] = value;
 }
 
 
 /*
 * Function: dequeue
-* Grab the first character off of the queue
+* Grab the first int off of the queue
 *
 * Params:
 *  queue - pointer to the queue
 *
 * Returns:
-*  The first character off of the queue,
-*  or an empty character if queue is empty.
+*  The first int off of the queue,
+*  or -1 if queue is empty.
 */
-Character dequeue(CharacterQueue* queue)
+int dequeue(Queue* queue)
 {
    // check for underflow
-   Character empty_character;
    if (queue->front == -1)
    {
       printf("Queue underflow error\n");
-      return empty_character;
+      return -1;
    }
 
-   // grab the character at the front of the queue
-   Character character = queue->characters[queue->front];
+   // grab the int at the front of the queue
+   int return_value = queue->items[queue->front];
 
    // check if the queue is now empty
    if (queue->front == queue->rear)
@@ -71,7 +70,7 @@ Character dequeue(CharacterQueue* queue)
    }
 
    // finish up
-   return character;
+   return return_value;
 }
 
 
